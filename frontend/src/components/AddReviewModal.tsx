@@ -49,6 +49,7 @@ const AddReviewModal = ({ children }: InvestModalProps) => {
       toast.loading("Transaction Pending");
     }
     if (isConfirmed) {
+      toast.dismiss();
       toast.success("Transaction Successful", {
         action: {
           label: "View on Etherscan",
@@ -59,6 +60,7 @@ const AddReviewModal = ({ children }: InvestModalProps) => {
       });
     }
     if (error) {
+      toast.dismiss();
       toast.error("Transaction Failed");
     }
   }, [isConfirming, isConfirmed, error, hash]);
@@ -79,7 +81,6 @@ const AddReviewModal = ({ children }: InvestModalProps) => {
   });
 
   const AddReview = async (data: z.infer<typeof formSchema>) => {
-    console.log(data);
     try {
       const addRoomTx = await writeContractAsync({
         abi: bookingAbi,
@@ -88,7 +89,7 @@ const AddReviewModal = ({ children }: InvestModalProps) => {
         args: [data.roomId, data.rating, data.comment],
       });
 
-      console.log("room transaction hash:", addRoomTx);
+      toast.error("room transaction hash: " + addRoomTx);
     } catch (err: any) {
       toast.error("Transaction Failed: " + err.message);
     }

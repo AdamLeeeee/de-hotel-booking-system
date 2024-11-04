@@ -39,10 +39,7 @@ export default function Home() {
       <div>
         {rooms.length > 0 ? (
           rooms?.map((room: any) => (
-            <>
-              {console.log(room)}
-              <RoomCard key={room.id} room={room} />
-            </>
+            <RoomCard key={room.id} room={room} />
           ))
         ) : (
           <div>

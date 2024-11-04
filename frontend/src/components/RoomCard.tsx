@@ -45,7 +45,8 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
         args: [room.category, 224, 2244],
       });
 
-      console.log("room booking hash:", bookRoomTx);
+      room.isAvailable = false;
+      toast.success("room booking hash:" + bookRoomTx)
     } catch (err: any) {
       toast.error("Transaction Failed: " + err.message);
     }

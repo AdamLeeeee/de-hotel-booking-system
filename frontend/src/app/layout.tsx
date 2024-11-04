@@ -22,12 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-        <title>Modern Web3 Starter</title>
-        <meta
-          name="description"
-          content="A starter kit for using the latest tools for building your dApps frontends"
-        />
       </head>
       <body
         className={cn(
