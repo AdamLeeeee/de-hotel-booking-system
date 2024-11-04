@@ -1,65 +1,18 @@
-# Smart Contracts for Morph Holesky Starter Kit
+# Onchain Hotel Booking
 
-This directory contains the smart contract development environment for the Morph Holesky Starter Kit. It includes both Hardhat and Foundry setups for comprehensive testing and deployment options.
+## 介绍
+链上酒店预定是一个可以帮助用户进行酒店预定的系统，其上链的特性能让用户使用更加便捷和安全保障。
 
-## Structure
+## 功能
+- 创建房间，开始接受预定
+- 预定房间
+- 对房间进行评价
 
-- `/hardhat`: Hardhat project for Solidity development and testing
-- `/foundry`: Foundry project for additional testing and deployment options
+## 亮点
+- 链上操作方便快捷安全
+- 前端界面简洁，展示关键信息
+- 合约逻辑公开，用户放心使用
 
-## Getting Started with Hardhat
-
-1. Navigate to the Hardhat directory:
-   ```
-   cd hardhat
-   ```
-2. Install dependencies:
-   ```
-   yarn install
-   ```
-3. Compile contracts:
-   ```
-   yarn hardhat compile
-   ```
-4. Run tests:
-   ```
-   yarn hardhat test
-   ```
-5. Deploy to Morph Holesky:
-   ```
-   yarn hardhat run scripts/deploy.ts --network morphHolesky
-   ```
-
-## Getting Started with Foundry
-
-1. Navigate to the Foundry directory:
-   ```
-   cd foundry
-   ```
-2. Install dependencies:
-   ```
-   forge install
-   ```
-3. Build the project:
-   ```
-   forge build
-   ```
-4. Run tests:
-   ```
-   forge test
-   ```
-5. Deploy to Morph Holesky:
-   ```
-   forge script script/DeployGreeter.s.sol:DeployGreeter --rpc-url $MORPH_HOLESKY_RPC_URL --broadcast
-   ```
-
-## Environment Variables
-
-Create a `.env` file in both the Hardhat and Foundry directories with the following variables:
-
-```
-PRIVATE_KEY=your_private_key_here
-MORPH_HOLESKY_RPC_URL=https://rpc-testnet.morphl2.io
-```
-
-Ensure you never commit your `.env` file to version control.
+## 展望
+- 可以结合zk实现预定，这样能更加安全的保护用户隐私
+- 部分功能还未实现，比如根据日期进行预定房间、退订房间等
